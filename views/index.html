@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <title>welcome to {{ title }}</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+  </head>
+  <body onload="load();">	
+	<noscript>
+		<p>This is a web application, please enable JavaScript.</p>
+	</noscript>
+	<div id="center">
+		<form id="shortner" method="POST">
+			<h1>{{title}}</h1>
+			<fieldset id="inputs">
+				<input id="longUrl" name="longUrl" type="text" placeholder="Enter URL" autofocus required>
+			</fieldset>
+			<fieldset id="actions">
+				<input type="button" id="submit" value="Shorten">
+			</fieldset>
+		</form>
+		<div id="urlShort" class="urlShort"></div>
+	</div>
+
+  </body>
+  <script src="/javascripts/sendUrl.js"></script>  
+</html>

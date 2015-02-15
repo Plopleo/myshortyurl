@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <title>welcome to {{ title }}</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/styleAdmin.css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  </head>
+  <body onload="load();">
+	<noscript>
+		<p>This is a web application, please enable JavaScript.</p>
+	</noscript>
+	<div id="widgets">
+		<div class="widget nbUrl">
+			<span class="number" id="nbUrl">{{ nbUrl }}</span></br>
+			Shorten links
+		</div>
+		<div class="widget nbVisited">
+			<span class="number" id="nbVisited">{{ nbVisited }}</span></br>
+			Visited links
+		</div>
+	</div>
+	<div class="wrapper">  
+		<div id="table" class="table">   
+			<div class="row">
+				<div class="cell">
+				<form id="shortner" method="POST">					
+					<input id="longUrl" class="field" name="longUrl" type="text" placeholder="Enter URL" required>					
+					<input type="button" id="submit" class="button" value="Shorten">					
+				</form>
+				</div>
+				<div class="cell"></div>
+			</div> 
+			<div class="row header blue">
+				<div class="cell">Url</div>
+				<div class="cell">Short Url</div>
+			</div>    
+				{% for url in urls %}
+					{% include "url.html" %}
+				{% endfor %}        
+		</div>
+	</div>
+	</div>
+
+  </body>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/javascripts/sendUrl.js"></script>  
+	<script>
+	   var socket = io.connect('http://localhost:{{port}}');
+		socket.on('newUrl', function (data) {
+			document.getElementById('nbUrl').innerHTML = 1 + +document.getElementById('nbUrl').innerHTML;
+		});
+		socket.on('urlClicked', function (data) {
+			document.getElementById('nbVisited').innerHTML = 1 + +document.getElementById('nbVisited').innerHTML;
+		});
+	</script>
+</html>
+

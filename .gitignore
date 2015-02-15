@@ -1,0 +1,3 @@
+#Some files/folder to ignore
+npm-debug.log
+node_modules/

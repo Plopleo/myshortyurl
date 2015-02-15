@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <title>404 Not found</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+  </head>
+  <body>	
+	<noscript>
+		<p>This is a web application, please enable JavaScript.</p>
+	</noscript>
+	<div id="shortner">
+		<h1>404 page not found</h1>
+		<p>Oops, an error occurred...</p>
+		<a href="/">Back to home</a>
+	</div>
+	<div>
+		<!-- Image from developer.mozilla.org -->
+		<img class="404" src="/images/404.png" alt="">
+	</div>
+
+  </body>
+</html>
