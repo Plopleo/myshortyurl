@@ -1,2 +1,2 @@
 # myshortyurl
-An simple url shortner
+A simple url shortner
