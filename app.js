@@ -20,7 +20,7 @@ nunjucks.configure('views', {
 
 // configuration of Mongoose
 var optionsMongoose = {user: 'admin', pass: 'admin'};
-mongoose.connect('mongodb://<dbuser>:<dbpassword>@ds053698.mongolab.com:53698/shorty', optionsMongoose);
+mongoose.connect('YOU RE URL FOR MONGODB', optionsMongoose);
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function (callback) {
